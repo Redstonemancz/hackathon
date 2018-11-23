@@ -67,32 +67,32 @@ void zmena1()
   digitalWrite(27, HIGH);
   digitalWrite(16, HIGH);
   delay(1500);
+  digitalWrite(25, LOW);
+  digitalWrite(26, HIGH);
   digitalWrite(27, LOW);
   delay(500);
+  for (int i = 0; i < 5; i++)
+  {
+    digitalWrite(17, HIGH);
+    delay(200);
+    digitalWrite(17, LOW);
+    delay(200);
+  }
   digitalWrite(16, LOW);
   digitalWrite(17, HIGH);
-  delay(5000);
+  delay(3000);
 
 }
 void zmenaBack1()
 {
   digitalWrite(17, HIGH);
-  for (int i = 0; i < 5; i++) {
-    digitalWrite(17, LOW);
-    delay(200);
-    digitalWrite(17, HIGH);
-    delay(200);
-    digitalWrite(17, LOW);
-    if (analogRead(2) > 4000)
-    {
-      digitalWrite(17, HIGH);
-      do
-      {
-        i = 0;
-      } while (analogRead(2) > 4000);
-      digitalWrite(17, LOW);
-    }
-  }
+  do
+  {
+  } while (analogRead(2) > 4000);
+  digitalWrite(16, HIGH);
+  digitalWrite(17, LOW);
+  delay(500);
+  digitalWrite(16, LOW);
   digitalWrite(27, HIGH);
   zmena2();
   zmenaBack2();
@@ -104,14 +104,24 @@ void zmena2()
   digitalWrite(18, HIGH);
   digitalWrite(19, HIGH);
   delay(1500);
+  digitalWrite(25, HIGH);
+  digitalWrite(26, LOW);
   digitalWrite(18, LOW);
   delay(500);
+  for (int i = 0; i < 5; i++)
+  {
+    digitalWrite(23, HIGH);
+    delay(200);
+    digitalWrite(23, LOW);
+    delay(200);
+  }
   digitalWrite(19, LOW);
   digitalWrite(23, HIGH);
+  delay(3000);
   mil = millis();
   do
   {
-    if (digitalRead(12) == HIGH)
+    if (digitalRead(12) == LOW)
     {
       zmenaBack2();
       zmena1();
@@ -119,29 +129,23 @@ void zmena2()
       return;
     }
     wait = millis();
-  } while (wait - mil < 5000);
+    Serial.print(wait);
+    Serial.println("  WAIT");
+    Serial.print(mil);
+    Serial.println("  MIL");
+  } while (wait - mil < 3000);
 
 }
 void zmenaBack2()
 {
-  digitalWrite(23, HIGH);
-  for (int i = 0; i < 5; i++) {
-    digitalWrite(23, LOW);
-    delay(200);
-    digitalWrite(23, HIGH);
-    delay(200);
-    digitalWrite(23, LOW);
-    if (analogRead(37) > 4000)
-    {
-      digitalWrite(23, HIGH);
-      do
-      {
-        i = 0;
-      } while (analogRead(37) > 4000);
-      digitalWrite(23, LOW);
-    }
-  }
-
+   digitalWrite(23, HIGH);
+  do
+  {
+  } while (analogRead(37) > 4000);
+  digitalWrite(19, HIGH);
+  digitalWrite(23, LOW);
+  delay(500);
+  digitalWrite(19, LOW);
   digitalWrite(18, HIGH);
 
 }
