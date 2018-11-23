@@ -9,6 +9,7 @@ void setup()
   pinMode(19, OUTPUT); //žlutá 2
   pinMode(23, OUTPUT); //zelená 2
   pinMode(38, INPUT); //magnetický senzor 2
+  int rad = 0;
   Serial.begin(9600);
 }
 
@@ -39,8 +40,7 @@ void loop() {
                 if (analogRead(39) == 0)
                 {
                   Serial.println(analogRead(39));
-                  zmena();
-                  zmenaBack();
+                  int rad = 1;
                 }
               }
             }
@@ -49,9 +49,52 @@ void loop() {
       }
     }
   }
+  digitalWrite(18, HIGH);
+  Serial.println(analogRead(38));
+  if (analogRead(38) == 0)
+  {
+    Serial.println(analogRead(38));
+    if (analogRead(38) == 0)
+    {
+      Serial.println(analogRead(38));
+      if (analogRead(38) == 0)
+      {
+        Serial.println(analogRead(38));
+        if (analogRead(38) == 0)
+        {
+          Serial.println(analogRead(38));
+          if (analogRead(38) == 0)
+          {
+            Serial.println(analogRead(38));
+            if (analogRead(38) == 0)
+            {
+              Serial.println(analogRead(38));
+              if (analogRead(38) == 0)
+              {
+                Serial.println(analogRead(38));
+                if (analogRead(38) == 0)
+                {
+                  Serial.println(analogRead(38));
+                  if (rad == 1)
+                  {
+                    zmena();
+                  }
+                  else
+                  {
+                    int rad = 2;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
 }
 
-void zmena()
+void zmena1()
 {
   digitalWrite(27, HIGH);
   delay(4000);
@@ -71,7 +114,7 @@ void zmena()
   digitalWrite(17, HIGH);
 
 }
-void zmenaBack()
+void zmenaBack1()
 {
   digitalWrite(17, HIGH);
   delay(4000);
@@ -83,5 +126,39 @@ void zmenaBack()
     digitalWrite(17, LOW);
   }
   digitalWrite(27, HIGH);
+
+}
+void zmena2()
+{
+  digitalWrite(18, HIGH);
+  delay(4000);
+  //  for (int i = 0; i < 5; i++) {
+  //    digitalWrite(16, HIGH);
+  //    digitalWrite(27,LOW);
+  //    delay(200);
+  //    digitalWrite(27, HIGH);
+  //    delay(200);
+  //    digitalWrite(27, LOW);
+  //  }
+  digitalWrite(19, HIGH);
+  delay(1500);
+  digitalWrite(18, LOW);
+  delay(500);
+  digitalWrite(19, LOW);
+  digitalWrite(23, HIGH);
+
+}
+void zmenaBack2()
+{
+  digitalWrite(23, HIGH);
+  delay(4000);
+  for (int i = 0; i < 5; i++) {
+    digitalWrite(23, LOW);
+    delay(200);
+    digitalWrite(23, HIGH);
+    delay(200);
+    digitalWrite(23, LOW);
+  }
+  digitalWrite(18, HIGH);
 
 }
