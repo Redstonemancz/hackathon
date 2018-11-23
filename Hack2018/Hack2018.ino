@@ -1,5 +1,8 @@
 int rad = 0;
-void setup()
+int mil = millis();
+int wait = millis();
+void setup()  
+
 {
   pinMode(27, OUTPUT); //červená
   pinMode(16, OUTPUT); //oranžová
@@ -12,6 +15,7 @@ void setup()
   pinMode(26, OUTPUT); //čer 3
   pinMode(37, INPUT); //magnetický senzor 2
   pinMode(12, INPUT_PULLUP); //tlačítko
+
 
   Serial.begin(9600);
 }
@@ -84,6 +88,7 @@ void zmenaBack1()
     digitalWrite(17, HIGH);
     do
     { 
+       i=0;
     }while(analogRead(2)>4000);
     digitalWrite(17,LOW);
   }
@@ -103,7 +108,16 @@ void zmena2()
   delay(500);
   digitalWrite(19, LOW);
   digitalWrite(23, HIGH);
-  delay(5000);
+  mil = millis();
+  do
+  {
+    if (digitalRead(12)==HIGH)
+    {
+      zmenaBack2();
+      zmena1();
+    }
+    wait = millis();
+  }while(wait-mil<5000);
 
 }
 void zmenaBack2()
@@ -120,7 +134,7 @@ void zmenaBack2()
       digitalWrite(23,HIGH);
       do
       {
-
+          i=0;
       } while (analogRead(37) > 4000);
         digitalWrite(23, LOW);
     }
