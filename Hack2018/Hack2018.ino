@@ -8,8 +8,10 @@ void setup()
   pinMode(18, OUTPUT); //červená 2
   pinMode(19, OUTPUT); //žlutá 2
   pinMode(23, OUTPUT); //zelená 2
-  pinMode(25, OUTPUT); //zel
+  pinMode(25, OUTPUT); //zel 3
+  pinMode(26, OUTPUT); //čer 3
   pinMode(37, INPUT); //magnetický senzor 2
+  pinMode(12, INPUT_PULLUP); //tlačítko
 
   Serial.begin(9600);
 }
