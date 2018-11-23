@@ -1,7 +1,7 @@
 int rad = 0;
 int mil = millis();
 int wait = millis();
-void setup()  
+void setup()
 
 {
   pinMode(27, OUTPUT); //červená
@@ -83,20 +83,20 @@ void zmenaBack1()
     digitalWrite(17, HIGH);
     delay(200);
     digitalWrite(17, LOW);
-      if (analogRead(2)>4000)
-  {
-    digitalWrite(17, HIGH);
-    do
-    { 
-       i=0;
-    }while(analogRead(2)>4000);
-    digitalWrite(17,LOW);
-  }
+    if (analogRead(2) > 4000)
+    {
+      digitalWrite(17, HIGH);
+      do
+      {
+        i = 0;
+      } while (analogRead(2) > 4000);
+      digitalWrite(17, LOW);
+    }
   }
   digitalWrite(27, HIGH);
-    zmena2();
-    zmenaBack2();
-  
+  zmena2();
+  zmenaBack2();
+
 
 }
 void zmena2()
@@ -111,13 +111,15 @@ void zmena2()
   mil = millis();
   do
   {
-    if (digitalRead(12)==HIGH)
+    if (digitalRead(12) == HIGH)
     {
       zmenaBack2();
       zmena1();
+      zmenaBack1();
+      return;
     }
     wait = millis();
-  }while(wait-mil<5000);
+  } while (wait - mil < 5000);
 
 }
 void zmenaBack2()
@@ -131,15 +133,15 @@ void zmenaBack2()
     digitalWrite(23, LOW);
     if (analogRead(37) > 4000)
     {
-      digitalWrite(23,HIGH);
+      digitalWrite(23, HIGH);
       do
       {
-          i=0;
+        i = 0;
       } while (analogRead(37) > 4000);
-        digitalWrite(23, LOW);
+      digitalWrite(23, LOW);
     }
-}
+  }
 
-digitalWrite(18, HIGH);
+  digitalWrite(18, HIGH);
 
 }
