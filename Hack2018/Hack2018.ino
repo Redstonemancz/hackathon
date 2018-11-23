@@ -4,24 +4,43 @@ void setup()
   pinMode(27, OUTPUT); //červená
   pinMode(16, OUTPUT); //oranžová
   pinMode(17, OUTPUT); //zelená
-  pinMode(39, INPUT); //magnetický senzor fsg
+  pinMode(39, INPUT); //magnetický senzor OMG
+  Serial.begin(9600);
 }
 
 void loop() {
   digitalWrite(27, HIGH);
+  Serial.println(analogRead(39));
   if (analogRead(39) == 0)
   {
-    delay(20);
+    Serial.println(analogRead(39));
     if (analogRead(39) == 0)
     {
-      delay(20);
+      Serial.println(analogRead(39));
       if (analogRead(39) == 0)
       {
-        delay(20);
+        Serial.println(analogRead(39));
         if (analogRead(39) == 0)
         {
-          zmena();
-          zmenaBack();
+          Serial.println(analogRead(39));
+          if (analogRead(39) == 0)
+          {
+            Serial.println(analogRead(39));
+            if (analogRead(39) == 0)
+            {
+              Serial.println(analogRead(39));
+              if (analogRead(39) == 0)
+              {
+                Serial.println(analogRead(39));
+                if (analogRead(39) == 0)
+                {
+                  Serial.println(analogRead(39));
+                  zmena();
+                  zmenaBack();
+                }
+              }
+            }
+          }
         }
       }
     }
