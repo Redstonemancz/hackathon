@@ -4,7 +4,11 @@ void setup()
   pinMode(27, OUTPUT); //červená
   pinMode(16, OUTPUT); //oranžová
   pinMode(17, OUTPUT); //zelená
-  pinMode(39, INPUT); //magnetický senzor OMG
+  pinMode(39, INPUT); //magnetický senzor
+  pinMode(18, OUTPUT); //červená 2
+  pinMode(19, OUTPUT); //žlutá 2
+  pinMode(23, OUTPUT); //zelená 2
+  pinMode(38, INPUT); //magnetický senzor 2
   Serial.begin(9600);
 }
 
@@ -60,7 +64,7 @@ void zmena()
   //    digitalWrite(27, LOW);
   //  }
   digitalWrite(16, HIGH);
-  delay(500);
+  delay(1500);
   digitalWrite(27, LOW);
   delay(500);
   digitalWrite(16, LOW);
