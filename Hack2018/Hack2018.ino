@@ -8,85 +8,13 @@ void setup()
   pinMode(18, OUTPUT); //červená 2
   pinMode(19, OUTPUT); //žlutá 2
   pinMode(23, OUTPUT); //zelená 2
-  pinMode(38, INPUT); //magnetický senzor 2
+  pinMode(25, OUTPUT); //zel
 
   Serial.begin(9600);
 }
 
 void loop() {
-  digitalWrite(17, HIGH);
-  digitalWrite(18, HIGH);
   Serial.println(analogRead(39));
-  if (analogRead(39) == 0)
-  {
-    Serial.println(analogRead(39));
-    if (analogRead(39) == 0)
-    {
-      Serial.println(analogRead(39));
-      if (analogRead(39) == 0)
-      {
-        Serial.println(analogRead(39));
-        if (analogRead(39) == 0)
-        {
-          Serial.println(analogRead(39));
-          if (analogRead(39) == 0)
-          {
-            Serial.println(analogRead(39));
-            if (analogRead(39) == 0)
-            {
-              Serial.println(analogRead(39));
-              if (analogRead(39) == 0)
-              {
-                Serial.println(analogRead(39));
-                if (analogRead(39) == 0)
-                {
-                  Serial.println(analogRead(39));
-                  zmena1();
-                  zmenaBack1();
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-  digitalWrite(18, HIGH);
-  Serial.println(analogRead(38));
-  if (analogRead(38) == 0)
-  {
-    Serial.println(analogRead(38));
-    if (analogRead(38) == 0)
-    {
-      Serial.println(analogRead(38));
-      if (analogRead(38) == 0)
-      {
-        Serial.println(analogRead(38));
-        if (analogRead(38) == 0)
-        {
-          Serial.println(analogRead(38));
-          if (analogRead(38) == 0)
-          {
-            Serial.println(analogRead(38));
-            if (analogRead(38) == 0)
-            {
-              Serial.println(analogRead(38));
-              if (analogRead(38) == 0)
-              {
-                Serial.println(analogRead(38));
-                if (analogRead(38) == 0)
-                {
-                  Serial.println(analogRead(38));
-                  zmena2();
-                  zmenaBack2();
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
   
 }
 
