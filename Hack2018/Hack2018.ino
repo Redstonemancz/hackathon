@@ -1,4 +1,4 @@
-
+  int rad = 0;
 void setup()
 {
   pinMode(27, OUTPUT); //červená
@@ -9,12 +9,13 @@ void setup()
   pinMode(19, OUTPUT); //žlutá 2
   pinMode(23, OUTPUT); //zelená 2
   pinMode(38, INPUT); //magnetický senzor 2
-  int rad = 0;
+
   Serial.begin(9600);
 }
 
 void loop() {
-  digitalWrite(27, HIGH);
+  digitalWrite(17, HIGH);
+  digitalWrite(18, HIGH);
   Serial.println(analogRead(39));
   if (analogRead(39) == 0)
   {
@@ -40,7 +41,8 @@ void loop() {
                 if (analogRead(39) == 0)
                 {
                   Serial.println(analogRead(39));
-                  int rad = 1;
+                  zmena1();
+                  zmenaBack1();
                 }
               }
             }
@@ -75,14 +77,8 @@ void loop() {
                 if (analogRead(38) == 0)
                 {
                   Serial.println(analogRead(38));
-                  if (rad == 1)
-                  {
-                    zmena();
-                  }
-                  else
-                  {
-                    int rad = 2;
-                  }
+                  zmena2();
+                  zmenaBack2();
                 }
               }
             }
@@ -91,7 +87,7 @@ void loop() {
       }
     }
   }
-
+  
 }
 
 void zmena1()
