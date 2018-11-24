@@ -139,11 +139,6 @@ void zmenaBack2()
   digitalWrite(23, HIGH);
   do
   {
-    if (digitalRead(12) == LOW)
-    {
-      zmenaBack2();
-      return;
-    }
   } while (analogRead(37) > 4000);
   delay(500);
   digitalWrite(19, HIGH);
