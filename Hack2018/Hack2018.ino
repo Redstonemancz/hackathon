@@ -123,8 +123,6 @@ void zmena2()
     if (digitalRead(12) == LOW)
     {
       zmenaBack2();
-      zmena1();
-      zmenaBack1();
       return;
     }
     wait = millis();
