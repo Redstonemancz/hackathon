@@ -88,13 +88,14 @@ void zmenaBack1()
   do
   {
   } while (analogRead(2) > 4000);
+  delay(500);
   digitalWrite(16, HIGH);
   digitalWrite(17, LOW);
   delay(500);
   digitalWrite(16, LOW);
   digitalWrite(27, HIGH);
-//  zmena2();
-//  zmenaBack2();
+  //  zmena2();
+  //  zmenaBack2();
 
 
 }
@@ -138,7 +139,13 @@ void zmenaBack2()
   digitalWrite(23, HIGH);
   do
   {
+    if (digitalRead(12) == LOW)
+    {
+      zmenaBack2();
+      return;
+    }
   } while (analogRead(37) > 4000);
+  delay(500);
   digitalWrite(19, HIGH);
   digitalWrite(23, LOW);
   delay(500);
